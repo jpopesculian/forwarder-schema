@@ -1,0 +1,79 @@
+PATH
+  remote: ../forwarder-models
+  specs:
+    forwarder_models (0.0.0)
+      activerecord
+      evt-settings
+
+PATH
+  remote: .
+  specs:
+    forwarder_schema (0.0.0)
+      forwarder_models
+      graphql
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (5.2.0)
+      activesupport (= 5.2.0)
+    activerecord (5.2.0)
+      activemodel (= 5.2.0)
+      activesupport (= 5.2.0)
+      arel (>= 9.0)
+    activesupport (5.2.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    arel (9.0.0)
+    concurrent-ruby (1.0.5)
+    confstruct (1.0.2)
+      hashie (~> 3.3)
+    evt-attribute (0.2.0.0)
+    evt-casing (0.3.0.3)
+    evt-clock (0.4.0.7)
+      naught
+      tzinfo
+    evt-dependency (0.1.1.0)
+      evt-subst_attr
+    evt-initializer (0.2.0.0)
+      evt-attribute
+    evt-log (0.5.0.0)
+      evt-clock
+      evt-dependency
+      evt-initializer
+      evt-telemetry
+      terminal_colors
+    evt-reflect (0.2.0.0)
+    evt-settings (0.2.2.0)
+      confstruct
+      evt-casing
+      evt-log
+    evt-subst_attr (0.2.0.1)
+      evt-attribute
+      evt-reflect
+      naught
+    evt-telemetry (0.3.2.1)
+      evt-clock
+      evt-dependency
+    graphql (1.8.4)
+    hashie (3.5.7)
+    i18n (1.0.1)
+      concurrent-ruby (~> 1.0)
+    minitest (5.11.3)
+    naught (1.1.0)
+    terminal_colors (1.0.0)
+    thread_safe (0.3.6)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  forwarder_models!
+  forwarder_schema!
+
+BUNDLED WITH
+   1.16.1
