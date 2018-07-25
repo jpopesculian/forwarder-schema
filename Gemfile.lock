@@ -1,4 +1,9 @@
 PATH
+  remote: ../chainable-message
+  specs:
+    evt-chainable_message (0.0.0)
+
+PATH
   remote: ../forwarder-models
   specs:
     forwarder_models (0.0.0)
@@ -6,11 +11,20 @@ PATH
       evt-settings
 
 PATH
+  remote: ../server-component
+  specs:
+    server_client (0.0.0)
+      evt-chainable_message
+      evt-configure
+      evt-messaging-postgres
+
+PATH
   remote: .
   specs:
     forwarder_schema (0.0.0)
       forwarder_models
       graphql
+      server_client
 
 GEM
   remote: https://rubygems.org/
@@ -30,13 +44,17 @@ GEM
     concurrent-ruby (1.0.5)
     confstruct (1.0.2)
       hashie (~> 3.3)
+    evt-async_invocation (0.1.0.4)
     evt-attribute (0.2.0.0)
     evt-casing (0.3.0.3)
     evt-clock (0.4.0.7)
       naught
       tzinfo
+    evt-configure (0.1.2.5)
     evt-dependency (0.1.1.0)
       evt-subst_attr
+    evt-identifier-uuid (0.2.0.0)
+      naught
     evt-initializer (0.2.0.0)
       evt-attribute
     evt-log (0.5.0.0)
@@ -45,7 +63,33 @@ GEM
       evt-initializer
       evt-telemetry
       terminal_colors
+    evt-message_store (0.7.0.2)
+      evt-async_invocation
+      evt-casing
+      evt-identifier-uuid
+      evt-initializer
+      evt-schema
+      evt-transform
+      evt-virtual
+    evt-message_store-postgres (0.10.2.2)
+      evt-log
+      evt-message_store
+      evt-message_store-postgres-database
+      evt-settings
+      pg
+    evt-message_store-postgres-database (0.6.0.0)
+    evt-messaging (0.29.0.4)
+      evt-message_store
+    evt-messaging-postgres (0.7.0.3)
+      evt-message_store-postgres
+      evt-messaging
     evt-reflect (0.2.0.0)
+    evt-schema (0.7.1.1)
+      evt-attribute
+      evt-set_attributes
+      evt-validate
+      evt-virtual
+    evt-set_attributes (0.5.0.0)
     evt-settings (0.2.2.0)
       confstruct
       evt-casing
@@ -57,12 +101,19 @@ GEM
     evt-telemetry (0.3.2.1)
       evt-clock
       evt-dependency
-    graphql (1.8.4)
+    evt-transform (0.2.1.0)
+      evt-log
+      evt-reflect
+    evt-validate (0.4.0.1)
+      evt-reflect
+    evt-virtual (0.1.1.1)
+    graphql (1.8.5)
     hashie (3.5.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     naught (1.1.0)
+    pg (1.0.0)
     terminal_colors (1.0.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
@@ -72,8 +123,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  evt-chainable_message!
   forwarder_models!
   forwarder_schema!
+  server_client!
 
 BUNDLED WITH
-   1.16.1
+   1.16.3

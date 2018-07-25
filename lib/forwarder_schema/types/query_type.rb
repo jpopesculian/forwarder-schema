@@ -1,6 +1,6 @@
 module ForwarderSchema
   module Types
-    class QueryType < GraphQL::Schema::Object
+    class QueryType < BaseObject
       description "The query root of this schema"
 
       include Fields::TextsField

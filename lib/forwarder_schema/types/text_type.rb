@@ -1,6 +1,6 @@
 module ForwarderSchema
   module Types
-    class TextType < GraphQL::Schema::Object
+    class TextType < BaseObject
       description "A Text Message"
 
       field :id, ID, null: false

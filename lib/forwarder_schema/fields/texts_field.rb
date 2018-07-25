@@ -10,7 +10,6 @@ module ForwarderSchema
       end
 
       def texts
-        binding.pry
         Models::Text.all
       end
     end
