@@ -13,11 +13,12 @@ module ForwarderSchema
         command = Server::Client::SmsSend.(
           body: body,
           to: number,
-          from: '+14158542955'
+          from: '+14158542955',
+          callback_root: "#{request.base_url}/sms/status"
         )
         {
           text: Models::Text.new(
-            id: command.sms_id,
+            # id: command.sms_id,
             to: :number,
             body: :body
           )
