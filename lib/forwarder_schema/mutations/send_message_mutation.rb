@@ -18,9 +18,12 @@ module ForwarderSchema
         )
         {
           text: Models::Text.new(
-            # id: command.sms_id,
-            to: :number,
-            body: :body
+            id: command.sms_id,
+            to: number,
+            body: body,
+            direction: Models::Text::OUTBOUND_DIRECTION,
+            time: Time.now.iso8601,
+            status: "sending"
           )
         }
       end
