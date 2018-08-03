@@ -18,4 +18,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'forwarder_models'
   s.add_runtime_dependency 'graphql'
   s.add_runtime_dependency 'server_client'
+  s.add_runtime_dependency 'concurrent-ruby'
+  s.add_runtime_dependency 'evt-settings'
+  s.add_runtime_dependency 'bunny'
 end

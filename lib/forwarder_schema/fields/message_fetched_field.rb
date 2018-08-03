@@ -11,7 +11,7 @@ module ForwarderSchema
       end
 
       def message_fetched(args = {})
-        true
+        Models::Text.first
       end
     end
   end

@@ -18,3 +18,4 @@ gems
 .envrc
 docker.env
 swarm-connect.sh
+settings/rabbitmq.json

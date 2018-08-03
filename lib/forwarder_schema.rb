@@ -1,11 +1,17 @@
 require 'graphql'
 require 'forwarder_models'
 require 'server/client'
+require 'concurrent'
+require 'settings'
+require 'bunny'
+
+require_relative 'forwarder_schema/utils/pipe'
 
 require_relative 'forwarder_schema/base/base_object'
 require_relative 'forwarder_schema/base/base_scalar'
 require_relative 'forwarder_schema/base/base_mutation'
 require_relative 'forwarder_schema/base/field'
+require_relative 'forwarder_schema/base/subscriptions'
 
 require_relative 'forwarder_schema/types/date_time_type'
 
